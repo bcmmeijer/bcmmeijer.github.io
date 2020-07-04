@@ -2,6 +2,21 @@
    BASE ELEMENTS
    ========================================================================== */
 
+p {
+  font-size: 16px !important;
+}
+
+code {
+  white-space : pre-wrap !important;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.highlight {
+  overflow: hidden;
+  font-size: 16px;
+}
+
 html {
   /* sticky footer fix */
   position: relative;
