@@ -90,12 +90,11 @@ analytics:
     tracking_id          :
     anonymize_ip         : # true, false (default)
 
-
 # Site Author
 author:
   name             : "Boudewijn Meijer"
   avatar           : "/assets/img/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Interested in malware engineering, especially on Windows. <br><br>--  \"Zero threats...wtf...\"<br>"
+  bio              : "Interested in malware engineering, especially on Windows in C/C++.<br>Pentesting and CTF's are also not out of the question.<br><br>--  \"Zero threats...wtf...\"<br>"
   location         : "Skidrow"
   email            : "bcm.meijer@gmail.com"
   links:
