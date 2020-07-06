@@ -31,7 +31,7 @@ CreateRemoteThread(hProcess, nullptr, 0, buffer, nullptr, 0, nullptr);
 
 Of course, it is important to check the returnvalues of the aforementioned functions.
 
-Other ways of process injection follow the above behaviour closely, but mostly differ by the way of executing the buffer (creating a thread, using an existing thread or using APC calls). 
+Other ways of process injection follow the above behavior closely, but mostly differ by the way of executing the buffer (creating a thread, using an existing thread or using APC calls). 
 
 What we want to achieve, however, is change the way of writing our payload into the buffer, so we can switch up the standard behavior and (hopefully) get past any detection mechanisms in place.
 
@@ -121,7 +121,7 @@ The final part is executing our payload. As said before, this can either be a pa
 
 An added bonus when injecting a DLL is that we don't need a big buffer to write our path into (`"C:\Temp\evil.dll"`, or maybe even `"C:\evil.dll"`) and does not have to be placed in executable memory. This means that we can also look for locations in a module that we have read and write access to. Doing this will eliminate the call to allocate memory, leaving us only with calls to interact with the thread.
 
-## getting rid of memory allocations
+## Getting rid of memory allocations
 Lets do what the above suggests. We can achieve this by using an unused piece of memory in the target process (a so called [codecave](https://en.wikipedia.org/wiki/Code_cave "codecave")). This memory has to be writable when mapped, though (this is no PE infection). Looking at the segments using a debugger, we can see the segments and their protection:
 <br><br>
 ![segments](/assets/img/blogposts/rop_injector/segments.png)
@@ -144,5 +144,5 @@ Testing this method against the following AV's\EDR yielded promising results. No
 # **Detection methods**
 This injector still makes some calls that can be flagged as malicious, like opening a thread and interacting with it (getting/setting the context and suspending/resuming the thread). Detecting this method would require manifacturers to write signatures to catch this behavior.
 
-# **final thoughts**
+# **Final thoughts**
 It was fun to mess around with the threads and to overcome the many hurdles that got in the way, especially after seeing the injector working as intended. This shows that you can always find new ways to achieve what you want, all you have to do is think out of the box a little once in a while. I want to give many thanks to my colleague Rick Veldhoven for helping me out when things got tough.
