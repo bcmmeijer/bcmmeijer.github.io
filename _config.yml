@@ -95,7 +95,7 @@ author:
   name             : "Boudewijn Meijer"
   avatar           : "/assets/img/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Interested in malware engineering, especially on Windows in C/C++.<br>Pentesting and CTF's are also not out of the question.<br><br>--  \"Zero threats...wtf...\"<br>"
-  location         : "Skidrow"
+  location         : "Rock bottom"
   email            : "bcm.meijer@gmail.com"
   links:
     - label: "Email"
